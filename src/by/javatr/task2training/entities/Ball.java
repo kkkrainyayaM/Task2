@@ -13,11 +13,6 @@ public class Ball {
         this.color = color;
     }
 
-    public Ball() {
-        this.weight = 0;
-        this.color = Colors.BLUE;
-    }
-
     public double getWeight() {
         return weight;
     }
