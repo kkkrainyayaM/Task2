@@ -8,10 +8,9 @@ public class Ball {
 
 
     public Ball(float weight, Colors color) {
-        if( weight >= 0 ) {
-            this.weight = weight;
-            this.color = color;
-        }
+        if( weight < 0 ) throw new IllegalArgumentException( "Weight cannot be less 0" );
+        this.weight = weight;
+        this.color = color;
     }
 
     public Ball() {
@@ -24,9 +23,8 @@ public class Ball {
     }
 
     public void setWeight(float weight) {
-        if( weight >= 0 ) {
-            this.weight = weight;
-        }
+        if( weight < 0 ) throw new IllegalArgumentException( "Weight cannot be less 0" );
+        this.weight = weight;
     }
 
     public Colors getColor() {

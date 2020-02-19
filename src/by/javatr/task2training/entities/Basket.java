@@ -5,21 +5,20 @@ import java.util.Objects;
 
 public class Basket {
 
-    private ArrayList<Ball> balls = new ArrayList<>();
+    private ArrayList<Ball> basket = new ArrayList<>();
 
     public ArrayList<Ball> getBalls() {
-        return balls;
+        return basket;
     }
 
     public void addBall(Ball ball) {
-        balls.add( ball );
+        basket.add( ball );
     }
 
-    public Ball getBallByIndex(int index) {
-        Ball ball = null;
-        if( index >= 0 ) {
-            ball = balls.get( index );
-        }
+    public Ball getBallByIndex(int index)  {
+        if( index<0 ) throw new IllegalArgumentException( "Index cannot be less 0" );
+        Ball ball;
+        ball = basket.get( index );
         return ball;
     }
 
@@ -40,7 +39,7 @@ public class Basket {
     @Override
     public String toString() {
         return "Basket{" +
-                "balls=" + balls +
+                "balls=" + basket +
                 '}';
     }
 

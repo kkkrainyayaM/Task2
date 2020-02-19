@@ -9,13 +9,8 @@ public class BasketUtils {
     private BasketUtils() {
     }
 
-    public static int getWeight(Basket basket) {
-        int weight = 0;
-        for (Ball ball :
-                basket.getBalls()) {
-            weight += ball.getWeight();
-        }
-        return weight;
+    public static long getWeight(Basket basket) {
+        return basket.getBalls().stream().map( Ball::getWeight ).count();
     }
 
     public static int getNumOfColorBalls(Basket basket, Colors color) {

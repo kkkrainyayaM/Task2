@@ -4,18 +4,17 @@ import by.javatr.task2training.entities.Ball;
 import by.javatr.task2training.entities.Basket;
 import by.javatr.task2training.util.BasketUtils;
 import by.javatr.task2training.entities.Colors;
+import by.javatr.task2training.util.RandomUtils;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Basket basket = new Basket();
-        int numberOfBalls = (int) (Math.random() * 30);
 
-        for (int i = 0; i < numberOfBalls; i++) {
+        for (int i = 0; i < RandomUtils.getRandomNumOfBalls(); i++) {
 
-            int weight = (int) (Math.random() * 500);
-            Ball ball = new Ball( weight, Colors.randomColor() );
+            Ball ball = new Ball( RandomUtils.getRandomWeight(), RandomUtils.getRandomColor() );
             basket.addBall( ball );
             System.out.println( "Ball (weight: " + ball.getWeight() + "; color: " + ball.getColor() + ") was added;" );
 
