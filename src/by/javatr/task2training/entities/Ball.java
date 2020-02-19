@@ -3,14 +3,14 @@ package by.javatr.task2training.entities;
 import java.util.Objects;
 
 public class Ball {
-    private double weight;
+    private float weight;
     private Colors color;
 
 
-    public Ball(double weight, Colors color) {
-        if(weight>=0){
-        this.weight = weight;
-        this.color = color;
+    public Ball(float weight, Colors color) {
+        if( weight >= 0 ) {
+            this.weight = weight;
+            this.color = color;
         }
     }
 
@@ -23,9 +23,10 @@ public class Ball {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        if(weight>=0){
-        this.weight = weight;}
+    public void setWeight(float weight) {
+        if( weight >= 0 ) {
+            this.weight = weight;
+        }
     }
 
     public Colors getColor() {
@@ -48,7 +49,7 @@ public class Ball {
 
     @Override
     public int hashCode() {
-        return Objects.hash( getWeight(),getColor() );
+        return Objects.hash( getWeight(), getColor() );
     }
 
     @Override

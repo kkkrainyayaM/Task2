@@ -5,11 +5,7 @@ import java.util.Objects;
 
 public class Basket {
 
-    private ArrayList<Ball> balls;
-
-    public Basket() {
-        this.balls = new ArrayList<>();
-    }
+    private ArrayList<Ball> balls = new ArrayList<>();
 
     public ArrayList<Ball> getBalls() {
         return balls;
@@ -19,14 +15,13 @@ public class Basket {
         balls.add( ball );
     }
 
-    public Ball getBallByIndex(int index){
+    public Ball getBallByIndex(int index) {
         Ball ball = null;
-        if(index>=0){
-           ball = balls.get( index );
+        if( index >= 0 ) {
+            ball = balls.get( index );
         }
         return ball;
     }
-
 
 
     @Override
