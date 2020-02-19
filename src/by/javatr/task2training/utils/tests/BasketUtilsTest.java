@@ -6,7 +6,7 @@ import org.junit.Test;
 public class BasketUtilsTest {
 
     @Test
-    public void getWeight_BasketIsNull() {
+    public void getWeight_Basket_() {
     }
 
     @Test
@@ -16,4 +16,5 @@ public class BasketUtilsTest {
     @Test
     public void getNumOfBlueBalls_BasketIsNull() {
     }
+    //will be added
 }

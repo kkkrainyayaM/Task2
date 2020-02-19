@@ -10,11 +10,11 @@ public class BasketUtils {
     }
 
     public static float getSumWeightOfBalls(Basket basket) {
-        return (float) basket.getBalls().stream().mapToDouble( Ball::getWeight ).reduce(0.0, Double::sum);
+        return (float) basket.getBalls().stream().mapToDouble( Ball::getWeight ).reduce( 0.0, Double::sum );
     }
 
     public static int getCountOfColorBalls(Basket basket, Colors color) {
-        return (int)basket.getBalls().stream().filter(ball -> color == ball.getColor()).count();
+        return (int) basket.getBalls().stream().filter( ball -> color == ball.getColor() ).count();
     }
 
     public static int getCountOfBlueBalls(Basket basket) {
