@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Ball {
     private float weight;
-    private Colors color;
+    private Color color;
 
 
-    public Ball(float weight, Colors color) {
+    public Ball(float weight, Color color) {
         if( weight < 0 ) throw new IllegalArgumentException( "Weight cannot be less 0" );
         this.weight = weight;
         this.color = color;
@@ -22,11 +22,11 @@ public class Ball {
         this.weight = weight;
     }
 
-    public Colors getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(Colors color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

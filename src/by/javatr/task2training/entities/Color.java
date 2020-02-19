@@ -1,5 +1,5 @@
 package by.javatr.task2training.entities;
 
-public enum Colors {
+public enum Color {
     BLUE, RED, GREEN, YELLOW
 }
