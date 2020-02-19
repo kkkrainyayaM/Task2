@@ -1,4 +1,4 @@
-package by.javatr.task2training.util.tests;
+package by.javatr.task2training.utils.tests;
 
 
 import org.junit.Test;

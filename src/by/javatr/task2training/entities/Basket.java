@@ -15,11 +15,9 @@ public class Basket {
         basket.add( ball );
     }
 
-    public Ball getBallByIndex(int index)  {
-        if( index<0 ) throw new IllegalArgumentException( "Index cannot be less 0" );
-        Ball ball;
-        ball = basket.get( index );
-        return ball;
+    public Ball getBallByIndex(int index) {
+        if( index < 0 ) throw new IllegalArgumentException( "Index cannot be less 0" );
+        return basket.get( index );
     }
 
 

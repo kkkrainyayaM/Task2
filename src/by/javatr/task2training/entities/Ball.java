@@ -36,8 +36,8 @@ public class Ball {
         if( this == o ) return true;
         if( !(o instanceof Ball) ) return false;
         Ball ball = (Ball) o;
-        return getWeight() == ball.getWeight() &&
-                getColor() == ball.getColor();
+        return weight == ball.weight &&
+                color == ball.color;
     }
 
     @Override
