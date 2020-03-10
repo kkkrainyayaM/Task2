@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class RandomUtils {
     private static Random random = new Random();
-    private static final int BORDEROFWEIGHT = 500;
-    private static final int BORDEROFCOUNT = 30;
+    private static final int BORDER_OF_WEIGHT = 500;
+    private static final int BORDER_OF_COUNT = 30;
 
     public static Color getRandomColor() {
         List<Color> colorsList = Arrays.asList( Color.values() );
@@ -17,10 +17,10 @@ public class RandomUtils {
     }
 
     public static float getRandomWeight() {
-        return (float) (Math.random() * BORDEROFWEIGHT);
+        return (float) (Math.random() * BORDER_OF_WEIGHT);
     }
 
     public static int getRandomNumber() {
-        return (int) (Math.random() * BORDEROFCOUNT);
+        return (int) (Math.random() * BORDER_OF_COUNT);
     }
 }
