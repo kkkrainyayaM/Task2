@@ -4,6 +4,7 @@ import by.javatr.task2training.exceptions.NegativeArgumentException;
 import by.javatr.task2training.exceptions.NullBallException;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Basket {
@@ -18,9 +19,35 @@ public class Basket {
         basket = new ArrayList<>();
     }
 
-    public List<Ball> getBalls() {
-        return basket;
+    public Iterator<Ball> iterator() {
+        return new BasketIterator();
     }
+
+    private class BasketIterator implements Iterator<Ball> {
+        private int index;
+
+        public BasketIterator() {
+            index = 0;
+        }
+
+        public boolean hasNext() {
+            return index < basket.size();
+        }
+
+        public Ball next() {
+            index++;
+            return basket.get( index - 1 );
+        }
+
+        public void remove() {
+            basket.remove( index - 1 );
+            index--;
+        }
+    }
+
+        /*public List<Ball> getBalls() {
+            return basket;
+        }*/
 
     public void addBall(Ball ball) throws NullBallException {
         if( ball == null ) throw new NullBallException( "Ball couldn't be null" );
@@ -32,7 +59,7 @@ public class Basket {
         basket.add( index, ball );
     }
 
-    public Ball getBallByIndex(int index) throws NegativeArgumentException {
+    public Ball getBall(int index) throws NegativeArgumentException {
         if( index < 0 ) throw new NegativeArgumentException( "Index cannot be less 0" );
         return basket.get( index );
     }
@@ -40,11 +67,6 @@ public class Basket {
     public void deleteBall(Ball ball) throws NullBallException {
         if( ball == null ) throw new NullBallException( "Ball couldn't be null" );
         basket.remove( ball );
-    }
-
-    public void deleteBall(int index) throws NegativeArgumentException {
-        if( index < 0 ) throw new NegativeArgumentException( "Index cannot be less 0" );
-        basket.remove( index );
     }
 
     public boolean hasBall(Ball ball) throws NullBallException {
@@ -57,8 +79,8 @@ public class Basket {
     public boolean equals(Object o) {
         if( this == o ) return true;
         if( o.getClass() != this.getClass() ) return false;
-        Basket basket = (Basket) o;
-        return getBalls().equals( basket.getBalls() );
+        Basket basket1 = (Basket) o;
+        return basket.equals( basket1.basket );
     }
 
     @Override

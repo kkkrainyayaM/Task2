@@ -1,6 +1,5 @@
 package by.javatr.task2training.utils;
 
-import by.javatr.task2training.entities.Ball;
 import by.javatr.task2training.entities.Basket;
 import by.javatr.task2training.entities.Color;
 
@@ -10,11 +9,21 @@ public class BasketUtils {
     }
 
     public static float getSumWeightOfBalls(Basket basket) {
-        return (float) basket.getBalls().stream().mapToDouble( Ball::getWeight ).sum();
+        float sum = 0;
+        while (basket.iterator().hasNext()) {
+            sum += basket.iterator().next().getWeight();
+        }
+        return sum;
     }
 
     public static int getCountOfColorBalls(Basket basket, Color color) {
-        return (int) basket.getBalls().stream().filter( ball -> color == ball.getColor() ).count();
+        int count = 0;
+        while (basket.iterator().hasNext()) {
+            if( basket.iterator().next().getColor().equals( color ) ) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static int getCountOfBlueBalls(Basket basket) {
